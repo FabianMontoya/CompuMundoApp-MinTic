@@ -7,8 +7,7 @@ public class UsuarioDTO {
 	private String name;
 	private String dni;
 	private String email;
-	private String usuario_crea;
-	
+	private String usuario_crea;	
 	private String option;
 	
 	public UsuarioDTO() {

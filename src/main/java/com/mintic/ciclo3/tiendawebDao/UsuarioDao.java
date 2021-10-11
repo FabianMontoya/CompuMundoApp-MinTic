@@ -95,7 +95,7 @@ public class UsuarioDao {
 			conex.CloseConnection();
 			
 		} catch (Exception e) {
-			System.out.println("Error al intentar consultar la información de usuarios --- " + e);
+			System.out.println("Error al intentar consultar la información del usuario --- " + e);
 		}
 		
 		return result;
@@ -174,7 +174,7 @@ public class UsuarioDao {
 	}
 	
 	public boolean DeleteUserInfo(String username) {
-Conexion conex = new Conexion();
+		Conexion conex = new Conexion();
 		
 		try {
 			String query="DELETE FROM usuario WHERE username=? ";

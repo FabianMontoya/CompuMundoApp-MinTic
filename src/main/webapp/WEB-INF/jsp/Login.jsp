@@ -38,15 +38,15 @@ body {
 <div id="outer">
 	<div id="inner" class="p-4 rounded">
 		<h2>LOGIN</h2>
-		<form:form action="login" method="post" modelAttribute="loginForm">     
+		<form:form action="validatelogin" method="post" modelAttribute="loginForm" autocomplete="off">	
 		 <div class="mb-3">
 			<form:label path="username" class="form-label">Usuario</form:label>
-		    <form:input path="username" id="username" class="form-control" />
-			<!--<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+		    <form:input path="username" id="username" class="form-control" required="required" maxlength="50"/>
+			<!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
 		</div>
 		<div class="mb-3">
 		   <form:label path="password" class="form-label">Contraseña</form:label>
-		   <form:password path="password" id="password" class="form-control"/><br/>
+		   <form:password path="password" id="password" class="form-control" required="required" maxlength="500"/>
 		</div>
 		                   
 		<button type="submit" class="btn btn-primary">Login</button>
@@ -57,13 +57,5 @@ body {
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-<script>
-
-function clearForm() {
-	
-}
-
-
-</script>
 </body>
 </html>

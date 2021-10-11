@@ -7,18 +7,22 @@ public class UsuarioDTO {
 	private String name;
 	private String dni;
 	private String email;
+	private String usuario_crea;
+	
+	private String option;
 	
 	public UsuarioDTO() {
 		super();
 	}
 	
-	public UsuarioDTO(String username, String password, String name, String dni, String email) {
+	public UsuarioDTO(String username, String password, String name, String dni, String email, String usuario_crea) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.name = name;
 		this.dni = dni;
 		this.email = email;
+		this.usuario_crea = usuario_crea;
 	}
 
 	public String getUsername() {
@@ -60,5 +64,23 @@ public class UsuarioDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public String getUsuario_crea() {
+		return usuario_crea;
+	}
+
+	public void setUsuario_crea(String usuario_crea) {
+		this.usuario_crea = usuario_crea;
+	}
+
+	public String getOption() {
+		return option;
+	}
+
+	public void setOption(String option) {
+		this.option = option;
+	}
+	
+	
 	
 }

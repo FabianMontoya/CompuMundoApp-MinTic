@@ -34,11 +34,14 @@ public class LoginController {
 		return "redirect:/login?action=logout";
 	}
 	
-	@PostMapping("/login")
+	@PostMapping("/validatelogin")
 	public String ValidateLogin(@ModelAttribute("loginForm") LoginDTO data,
 	        final HttpServletRequest request, Model model, HttpSession session) {
-
-		data.setPassword(DigestUtils.sha256Hex(data.getPassword()));
+		
+		if(data.getPassword().length() == 0 && data.getUsername().length() == 0) {
+			model.addAttribute("credentials_error", "Debe completar todos los datos para poder validar el acceso, por favor verificar.");
+			return "/CredentialsError";
+		}
 		
 		loginService = new LoginServiceImpl();
 		boolean result = loginService.validateUser(data);
@@ -54,8 +57,6 @@ public class LoginController {
 	
 	private void addUserInSession(LoginDTO userInfo, HttpSession session) {
 		session.setAttribute("username", userInfo.getUsername());
-	}
-	
-	
+	}	
 
 }

@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Credenciales incorrectas</title>
-
+<title>Error procesando solicitud</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
@@ -16,14 +15,12 @@ body {
 }
 
 </style>
-
 </head>
 <body>
-
 <main class="container">
   <div class="bg-light p-5 rounded">
-    <h4 class="alert-heading">Error de credenciales</h4>
-    <p>${credentials_error}</p>
+    <h4 class="alert-heading">${title_error}</h4>
+    <p>${message_error}</p>
     <hr>
     <button type="button" class="btn btn-primary" id="closeAlert">Cerrar</button>
   </div>
@@ -36,9 +33,8 @@ body {
 document.getElementById("closeAlert").addEventListener("click", toLogin);
 
 function toLogin() {
-	window.location.href = "/login";
+	window.location.href = "${return_url}";
 }
 </script>
-
 </body>
 </html>
